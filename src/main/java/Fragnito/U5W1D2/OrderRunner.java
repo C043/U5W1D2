@@ -4,13 +4,10 @@ import Fragnito.U5W1D2.entities.Cibo;
 import Fragnito.U5W1D2.entities.Menu;
 import Fragnito.U5W1D2.entities.Ordine;
 import Fragnito.U5W1D2.entities.Tavolo;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
