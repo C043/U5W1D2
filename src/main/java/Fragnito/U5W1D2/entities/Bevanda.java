@@ -19,6 +19,6 @@ public class Bevanda extends Cibo{
                 getNome() + " " +
                 getLitri() + "l " +
                 "Kcal: " + getKcal() + " " +
-                "Prezzo " + getPrezzo();
+                "Prezzo " + getPrezzo() + "$";
     }
 }

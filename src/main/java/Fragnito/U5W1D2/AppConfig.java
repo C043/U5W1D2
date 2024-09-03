@@ -104,14 +104,9 @@ public class AppConfig {
     public Tavolo tavolo3(){
         return new Tavolo(3, 6, StatoTavolo.OCCUPATO);
     }
-    @Bean
-    public Ordine ordine(@Qualifier("tavolo2")Tavolo tavolo, @Value("${ordine.coperto}") String coperto,@Qualifier("cheese") Topping cheese, @Qualifier("pizza_margherita") Pizza pizzaMargherita, @Qualifier("salami_pizza") Pizza salamiPizza, @Qualifier("birra")Bevanda birra, @Qualifier("vino") Bevanda vino){
-        List<Cibo> ciboList = new ArrayList<>();
-        ciboList.add(pizzaMargherita);
-        ciboList.add(salamiPizza);
-        ciboList.add(birra);
-        ciboList.add(vino);
-        ciboList.add(cheese);
-        return new Ordine(tavolo, 1, ciboList, 2, Double.parseDouble(coperto));
+    @Bean(name = "coperto")
+    public double coperto(@Value("${ordine.coperto}") String coperto){
+        return Double.parseDouble(coperto);
     }
 }
+

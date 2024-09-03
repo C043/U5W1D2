@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class Ordine {
     private int numeroCoperti;
     private int oraAcquisizione;
     private double totaleOrdine;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public Ordine(Tavolo tavolo, int numeroOrdine, List<Cibo> listaCibo, int numeroCoperti, double coperto) {
         this.tavolo = tavolo;
@@ -43,6 +45,6 @@ public class Ordine {
         System.out.println("Orario: " + getOraAcquisizione());
         listaCibo.forEach(System.out::println);
         System.out.println("Numero coperti: " + getNumeroCoperti());
-        System.out.println("Totale ordine: " + getTotaleOrdine());
+        System.out.println("Totale ordine: " + df.format(getTotaleOrdine()) + "$");
     }
 }

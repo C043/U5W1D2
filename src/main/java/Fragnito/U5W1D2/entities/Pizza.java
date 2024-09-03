@@ -25,7 +25,7 @@ public class Pizza extends Cibo{
         return "Pizza: " +
                 getNome() + " " +
                 "Kcal: " + getKcal() + " " +
-                "Prezzo " + getPrezzo();
+                "Prezzo " + getPrezzo() + "$";
     }
 }
 

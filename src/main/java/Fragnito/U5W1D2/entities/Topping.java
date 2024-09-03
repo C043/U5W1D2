@@ -16,6 +16,6 @@ public class Topping extends Cibo{
         return "Topping: " +
                 getNome() + " " +
                 "Kcal: " + getKcal() + " " +
-                "Prezzo " + getPrezzo();
+                "Prezzo " + getPrezzo() + "$";
     }
 }
