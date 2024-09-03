@@ -4,7 +4,6 @@ import Fragnito.U5W1D2.enums.StatoOrdine;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Calendar;
 import java.util.List;

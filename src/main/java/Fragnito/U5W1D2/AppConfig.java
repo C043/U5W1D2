@@ -13,7 +13,7 @@ import java.util.List;
 
 @Configuration
 @PropertySource("application.properties")
-public class MenuConfig {
+public class AppConfig {
     @Bean(name = "tomato")
     public Topping tomato(){
         return new Topping("Tomato", 50, 1);
