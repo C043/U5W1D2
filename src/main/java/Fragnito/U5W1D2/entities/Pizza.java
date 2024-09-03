@@ -16,5 +16,9 @@ public class Pizza extends Cibo{
         super(nome, kcal, prezzo);
         this.toppingList = toppingList;
     }
+
+    public void addTopping(Topping topping){
+        this.toppingList.add(topping);
+    }
 }
 
