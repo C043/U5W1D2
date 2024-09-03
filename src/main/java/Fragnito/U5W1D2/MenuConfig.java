@@ -12,34 +12,34 @@ import java.util.List;
 
 @Configuration
 public class MenuConfig {
-    @Bean
+    @Bean(name = "tomato")
     public Topping tomato(){
         return new Topping("Tomato", 50, 1);
     }
-    @Bean
+    @Bean(name = "cheese")
     public Topping cheese(){
         return new Topping("Cheese", 50, 0.69);
     }
-    @Bean
+    @Bean(name = "ham")
     public Topping ham(){
         return new Topping("Ham", 120, 0.99);
     }
-    @Bean
+    @Bean(name = "pineapple")
     public Topping pineapple(){
         return new Topping("Pineapple", 24, 0.79);
     }
-    @Bean
+    @Bean(name = "salami")
     public Topping salami(){
         return new Topping("Salami", 86, 0.99);
     }
-    @Bean
+    @Bean(name = "pizza_margherita")
     public Pizza pizzaMargherita(){
         List<Topping> margheritaToppings = new ArrayList<>();
         margheritaToppings.add(tomato());
         margheritaToppings.add(cheese());
         return new Pizza("Pizza Margherita (tomato, cheese)", 1104, 4.99, margheritaToppings);
     }
-    @Bean
+    @Bean(name = "hawaiian_pizza")
     public Pizza hawaiianPizza(){
         List<Topping> hawaiianPizzaToppings = new ArrayList<>();
         hawaiianPizzaToppings.add(tomato());
@@ -48,7 +48,7 @@ public class MenuConfig {
         hawaiianPizzaToppings.add(pineapple());
         return new Pizza("Hawaiian Pizza (tomato, cheese, ham, pineapple)", 1024, 6.49, hawaiianPizzaToppings);
     }
-    @Bean
+    @Bean(name = "salami_pizza")
     public Pizza salamiPizza(){
         List<Topping> salamiPizzaToppings = new ArrayList<>();
         salamiPizzaToppings.add(tomato());
@@ -56,15 +56,15 @@ public class MenuConfig {
         salamiPizzaToppings.add(salami());
         return new Pizza("Salami Pizza (tomato, cheese, salami)", 1160, 5.99, salamiPizzaToppings);
     }
-    @Bean
+    @Bean(name = "acqua")
     public Bevanda acqua(){
         return new Bevanda("Water", 0, 1.29, 0.5);
     }
-    @Bean
+    @Bean(name = "birra")
     public Bevanda birra(){
         return new Bevanda("Beer", 355, 5, 0.55);
     }
-    @Bean
+    @Bean(name = "vino")
     public Bevanda vino(){
         return new Bevanda("Wine", 607, 7.49, 0.75);
     }
