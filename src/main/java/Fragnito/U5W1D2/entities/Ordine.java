@@ -42,6 +42,7 @@ public class Ordine {
         System.out.println("--------------Ordine n. " + getNumeroOrdine() + "--------------");
         System.out.println("Tavolo: " + this.tavolo.getNumeroTavolo());
         listaCibo.forEach(System.out::println);
+        System.out.println("Numero coperti: " + getNumeroCoperti());
         System.out.println("Totale ordine: " + getTotaleOrdine());
     }
 }
