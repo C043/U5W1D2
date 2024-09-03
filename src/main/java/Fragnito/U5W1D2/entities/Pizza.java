@@ -8,7 +8,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@ToString
 public class Pizza extends Cibo{
     private List<Topping> toppingList;
 
@@ -19,6 +18,14 @@ public class Pizza extends Cibo{
 
     public void addTopping(Topping topping){
         this.toppingList.add(topping);
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza: " +
+                getNome() + " " +
+                "Kcal: " + getKcal() + " " +
+                "Prezzo " + getPrezzo();
     }
 }
 

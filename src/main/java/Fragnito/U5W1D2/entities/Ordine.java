@@ -37,4 +37,11 @@ public class Ordine {
                 .map(Cibo::getPrezzo)
                 .reduce(0.00, Double::sum) + this.numeroCoperti * coperto;
     }
+
+    public void printOrder(){
+        System.out.println("--------------Ordine n. " + getNumeroOrdine() + "--------------");
+        System.out.println("Tavolo: " + this.tavolo.getNumeroTavolo());
+        listaCibo.forEach(System.out::println);
+        System.out.println("Totale ordine: " + getTotaleOrdine());
+    }
 }

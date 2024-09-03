@@ -6,9 +6,16 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 public class Topping extends Cibo{
     public Topping(String nome, int kcal, double prezzo) {
         super(nome, kcal, prezzo);
+    }
+
+    @Override
+    public String toString() {
+        return "Topping: " +
+                getNome() + " " +
+                "Kcal: " + getKcal() + " " +
+                "Prezzo " + getPrezzo();
     }
 }

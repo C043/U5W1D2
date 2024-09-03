@@ -1,16 +1,18 @@
 package Fragnito.U5W1D2;
 
-import Fragnito.U5W1D2.entities.Bevanda;
-import Fragnito.U5W1D2.entities.Menu;
-import Fragnito.U5W1D2.entities.Pizza;
-import Fragnito.U5W1D2.entities.Topping;
+import Fragnito.U5W1D2.entities.*;
+import Fragnito.U5W1D2.enums.StatoTavolo;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class MenuConfig {
     @Bean(name = "tomato")
     public Topping tomato(){
@@ -89,5 +91,26 @@ public class MenuConfig {
         bevandaList.add(vino());
 
         return new Menu(pizzaList, toppingList, bevandaList);
+    }
+    @Bean(name = "tavolo1")
+    public Tavolo tavolo1(){
+        return new Tavolo(1, 4, StatoTavolo.LIBERO);
+    }
+    @Bean
+    public Tavolo tavolo2(){
+        return new Tavolo(2, 2, StatoTavolo.LIBERO);
+    }
+    @Bean(name = "tavolo3")
+    public Tavolo tavolo3(){
+        return new Tavolo(3, 6, StatoTavolo.OCCUPATO);
+    }
+    @Bean
+    public Ordine ordine(@Qualifier("tavolo2")Tavolo tavolo, @Value("${ordine.coperto}") String coperto, @Qualifier("pizza_margherita") Pizza pizzaMargherita, @Qualifier("salami_pizza") Pizza salamiPizza, @Qualifier("birra")Bevanda birra, @Qualifier("vino") Bevanda vino){
+        List<Cibo> ciboList = new ArrayList<>();
+        ciboList.add(pizzaMargherita);
+        ciboList.add(salamiPizza);
+        ciboList.add(birra);
+        ciboList.add(vino);
+        return new Ordine(tavolo, 1, ciboList, 2, Double.parseDouble(coperto));
     }
 }
